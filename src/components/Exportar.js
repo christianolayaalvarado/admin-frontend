@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { getToken, clearToken } from '../utils/auth';
 import { useNavigate } from 'react-router-dom';
+import './Exportar.css'; // Nuevo estilo
 
 function Exportar() {
   const [mensaje, setMensaje] = useState('');
@@ -41,11 +42,13 @@ function Exportar() {
   };
 
   return (
-    <div>
+    <div className='exportar-background'>
+    <div className='exportar-box'>
       <h2>Exportar Clientes</h2>
       {mensaje && <p>{mensaje}</p>}
       <button onClick={handleExport}>Descargar CSV</button>
       <button onClick={cerrarSesion}>Cerrar sesión</button>
+      </div>
     </div>
   );
 }

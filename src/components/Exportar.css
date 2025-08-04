@@ -1,0 +1,27 @@
+.exportar-background {
+  background: linear-gradient(120deg, #1c92d2, #f2fcfe);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.exportar-box {
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.exportar-box button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.logout-button {
+  background-color: #e74c3c;
+  color: white;
+}

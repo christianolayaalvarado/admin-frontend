@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { setToken } from '../utils/auth';
+import './Login.css'; // Nuevo estilo para el componente
+
 
 function Login() {
   const [usuario, setUsuario] = useState('');
@@ -32,7 +34,8 @@ function Login() {
   };
 
   return (
-    <div>
+    <div className='login-background'>
+    <div className='login-box'>
       <h2>Login de Administrador</h2>
       {error && <p style={{ color: 'red' }}>{error}</p>}
       <form onSubmit={handleLogin}>
@@ -40,6 +43,7 @@ function Login() {
         <input type="password" placeholder="Contraseña" value={contraseña} onChange={e => setContraseña(e.target.value)} required />
         <button type="submit">Ingresar</button>
       </form>
+      </div>
     </div>
   );
 }
