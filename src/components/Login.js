@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { setToken } from '../utils/auth';
-import './Login.css'; // Nuevo estilo para el componente
+import loginBg from './images/login-bg.jpg';
+
 
 
 function Login() {
@@ -34,8 +35,19 @@ function Login() {
   };
 
   return (
-    <div className='login-background'>
-    <div className='login-box'>
+    <div
+  className="login-background"
+  style={{
+    backgroundImage: `url(${loginBg})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    minHeight: '100vh',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
+  }}
+>
+    <div>
       <h2>Login de Administrador</h2>
       {error && <p style={{ color: 'red' }}>{error}</p>}
       <form onSubmit={handleLogin}>
