@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { setToken } from '../utils/auth';
 import loginBg from './images/login-bg.jpg';
-
-
+import './Login.css';
 
 function Login() {
   const [usuario, setUsuario] = useState('');
@@ -35,30 +34,18 @@ function Login() {
   };
 
   return (
-    <div
-  className="login-background"
-  style={{
-    backgroundImage: `url(${loginBg})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    minHeight: '100vh',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center'
-  }}
->
-    <div>
-      <h2>Login de Administrador</h2>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      <form onSubmit={handleLogin}>
-        <input type="text" placeholder="Usuario" value={usuario} onChange={e => setUsuario(e.target.value)} required />
-        <input type="password" placeholder="Contraseña" value={contraseña} onChange={e => setContraseña(e.target.value)} required />
-        <button type="submit">Ingresar</button>
-      </form>
+    <div className="login-background" style={{ backgroundImage: `url(${loginBg})` }}>
+      <div className="login-box">
+        <h2 className="login-title">Login de Administrador</h2>
+        {error && <p className="error-message">{error}</p>}
+        <form onSubmit={handleLogin}>
+          <input type="text" placeholder="Usuario" value={usuario} onChange={e => setUsuario(e.target.value)} required />
+          <input type="password" placeholder="Contraseña" value={contraseña} onChange={e => setContraseña(e.target.value)} required />
+          <button type="submit">Ingresar</button>
+        </form>
       </div>
     </div>
   );
 }
 
 export default Login;
-
