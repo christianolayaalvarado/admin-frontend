@@ -30,13 +30,15 @@
 .login-box input {
   display: block;
   margin: 15px auto;
-  padding: 12px;
-  width: 100%;
-  max-width: 100%;
+  padding: 12px 16px; /* Más padding lateral */
+  width: 90%; /* Menos ancho que el 100% */
+  max-width: 280px; /* Limita el tamaño para no pasar el botón */
   border: none;
   border-radius: 5px;
   font-size: 16px;
+  box-sizing: border-box; /* Asegura que padding no sobrepase el ancho */
 }
+
 
 .login-box button {
   margin-top: 20px;
@@ -47,9 +49,11 @@
   font-weight: bold;
   border-radius: 5px;
   cursor: pointer;
-  width: 100%;
+  width: 90%;
+  max-width: 280px;
   font-size: 16px;
 }
+
 
 .login-box button:hover {
   background-color: #2980b9;
